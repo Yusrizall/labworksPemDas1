@@ -6,13 +6,13 @@ using namespace std;
 
 int main() {
     //inisialisasi
-    int     tarik   {};
-    double  dtarik  {};
-    double  saldo   {};
-    double  admin   {.5};
-    char    tanya   {'T'};
-    bool    ulang   {false};
-    string  nama    {"Pooja"};
+    int     tarik       {};
+    double  tot_tarik   {};
+    double  saldo       {};
+    double  admin       {.5};
+    char    tanya       {'T'};
+    bool    ulang       {false};
+    string  nama        {"Pooja"};
     
     system("cls");
 
@@ -35,10 +35,11 @@ int main() {
         cout    << "\n";
 
         //logika penarikan
-        dtarik  = tarik + admin;
-        if (dtarik > saldo)
+        tot_tarik  = tarik + admin;
+        if (tot_tarik > saldo)
         {
-            cout    << "[GAGAL] Penarikan tidak boleh melebihi saldo !" << "\n\n";
+            cout    << "[GAGAL] Penarikan tidak boleh melebihi saldo !" << "\n";
+            cout    << "[GAGAL] Saldo anda saat ini adalah : $" << setprecision(2) << fixed << saldo << "\n\n";
         }else if (tarik <= 0)
         {
             cout    << "[GAGAL] Penarikan tidak boleh 0 atau kurang dari 0." << "\n\n";
@@ -46,9 +47,9 @@ int main() {
         {
             cout    << "[GAGAL] Mesin hanya bisa melakukan penarikan saldo nominal kelipatan 5." << "\n\n";
         }else{
-            saldo   = saldo - dtarik;
-            cout    << "Penarikan berhasil, saldo terpotong $" << setprecision(2) << fixed << dtarik << "\n";
-            cout    << "Saldo anda saat ini adalah $" << setprecision(2) << fixed << saldo << "\n\n";
+            saldo   = saldo - tot_tarik;
+            cout    << "[SUKSES] Penarikan berhasil, saldo terpotong $" << setprecision(2) << fixed << tot_tarik << "\n";
+            cout    << "[SUKSES] Saldo anda saat ini adalah $" << setprecision(2) << fixed << saldo << "\n\n";
         }        
         
         //pertanyaan pengulangan
