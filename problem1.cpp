@@ -25,7 +25,7 @@ int main() {
     //loop penarikan
     do{
         cout    << "Selamat datang nasabah "<< nama <<" di Bank GT-B" << "\n";
-        cout    << "Saldo anda saat ini adalah : $" << setprecision(2) << fixed << saldo << "\n\n";
+        cout    << "Saldo anda saat ini adalah : [$" << setprecision(2) << fixed << saldo << "] \n\n";
 
         //input penarikan
         cout    << "[INFORMASI] Mesin hanya bisa melakukan penarikan saldo nominal kelipatan 5." << "\n";
@@ -49,7 +49,7 @@ int main() {
         }else{
             saldo   = saldo - tot_tarik;
             cout    << "[SUKSES] Penarikan berhasil, saldo terpotong $" << setprecision(2) << fixed << tot_tarik << "\n";
-            cout    << "[SUKSES] Saldo anda saat ini adalah $" << setprecision(2) << fixed << saldo << "\n\n";
+            cout    << "[SUKSES] Saldo anda saat ini adalah : [$" << setprecision(2) << fixed << saldo << "]\n\n";
         }        
         
         //pertanyaan pengulangan
@@ -66,5 +66,8 @@ int main() {
         }
     } while (ulang == true);
 
-    cout    << "Terimakasih sudah menggunakan Bank GT-B !!!" << "\n\n";
+    cout    <<  "\n --------------------------------------------"
+            <<  "\n Terimakasih sudah menggunakan Bank GT-B !!!" 
+            <<  "\n --------------------------------------------"
+            <<  "\n\n\n";
 }
